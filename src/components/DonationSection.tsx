@@ -21,29 +21,31 @@ const DonationSection = () => {
 
         <FadeIn delay={0.15}>
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Button
-              size="lg"
-              className="rounded-full px-8 gap-2"
-              onClick={() => {
-                // Stripe donation — placeholder until connected
-                // Will be replaced with Stripe Checkout redirect
-                window.open("#donate", "_self");
-              }}
-            >
-              <Heart className="h-4 w-4" />
-              Donate Now
+            <Button size="lg" className="rounded-full px-8 gap-2" asChild>
+              <a
+                href="https://gofund.me/8355b5b82"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Heart className="h-4 w-4" />
+                Donate Now
+              </a>
             </Button>
 
             <Button
               variant="outline"
               size="lg"
               className="rounded-full px-8 gap-2"
-              onClick={() => {
-                window.open("https://gofund.me/8355b5b82", "_blank");
-              }}
+              asChild
             >
-              <ExternalLink className="h-4 w-4" />
-              GoFundMe Campaign
+              <a
+                href="https://gofund.me/8355b5b82"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <ExternalLink className="h-4 w-4" />
+                GoFundMe Campaign
+              </a>
             </Button>
           </div>
 
