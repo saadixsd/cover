@@ -2,6 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { Menu, X, Heart } from "lucide-react";
 import { cn } from "@/lib/utils";
+import coverLogo from "@/assets/cover-logo.jpg";
 
 const navLinks = [
   { to: "/", label: "Home" },
@@ -16,10 +17,18 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/90 backdrop-blur-sm">
-      <div className="container mx-auto flex h-14 max-w-5xl items-center justify-between px-4 sm:h-16 sm:px-6">
-        <Link to="/" className="flex items-center gap-2 font-serif text-xl font-semibold tracking-wide text-foreground sm:text-2xl">
-          <span>COVER</span>
-          <span className="text-xs text-muted-foreground">🍁</span>
+      <div className="container mx-auto flex h-12 max-w-5xl items-center justify-between px-3 sm:h-14 sm:px-6">
+        <Link
+          to="/"
+          className="flex max-w-[min(200px,55vw)] shrink-0 items-center py-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-sm"
+        >
+          <img
+            src={coverLogo}
+            alt="COVER — home"
+            className="h-7 w-auto object-contain object-left sm:h-8"
+            width={200}
+            height={32}
+          />
         </Link>
 
         {/* Desktop nav */}
