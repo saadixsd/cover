@@ -2,7 +2,6 @@ import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { Menu, X, Heart } from "lucide-react";
 import { cn } from "@/lib/utils";
-import coverLogo from "@/assets/cover-logo.jpg";
 
 const navLinks = [
   { to: "/", label: "Home" },
@@ -21,15 +20,12 @@ const Header = () => {
         <Link
           to="/"
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="flex shrink-0 items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-sm"
+          className="flex shrink-0 items-center gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-sm"
         >
-          <img
-            src={coverLogo}
-            alt="COVER — home"
-            className="h-9 w-auto object-contain object-left sm:h-10"
-            width={200}
-            height={40}
-          />
+          <span className="text-xl font-bold tracking-tight text-primary sm:text-2xl">
+            COVER
+          </span>
+          <span className="text-xl sm:text-2xl" role="img" aria-label="maple leaf">🍁</span>
         </Link>
 
         {/* Desktop nav */}
