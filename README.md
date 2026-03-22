@@ -1,73 +1,74 @@
-# Welcome to your Lovable project
+# COVER
 
-## Project info
+**COVER** is a Canadian nonprofit website offering confidential support and resources for students and individuals navigating unsafe situations. This repo is the source for the public-facing site (Vite + React + TypeScript).
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Repository
 
-## How can I edit this code?
+- **GitHub:** [https://github.com/saadixsd/cover](https://github.com/saadixsd/cover)
 
-There are several ways of editing your application.
+### Get the code
 
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+**Option A — Clone with Git (recommended for development)**
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+git clone https://github.com/saadixsd/cover.git
+cd cover
+```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+**Option B — Download a ZIP**
 
-# Step 3: Install the necessary dependencies.
-npm i
+1. Open [https://github.com/saadixsd/cover](https://github.com/saadixsd/cover).
+2. Click the green **Code** button → **Download ZIP**.
+3. Unzip the archive and open a terminal in the extracted `cover` folder.
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+## Run it locally
+
+You need **Node.js 18+** (LTS is fine). If you use a version manager, [nvm](https://github.com/nvm-sh/nvm) works well.
+
+```sh
+# Install dependencies
+npm install
+```
+
+```sh
+# Start the dev server (hot reload)
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Then open the URL shown in the terminal (usually `http://localhost:5173`).
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+No API keys or `.env` files are required for the standard static marketing site to run.
 
-**Use GitHub Codespaces**
+### Other commands
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+| Command        | Purpose                          |
+|----------------|----------------------------------|
+| `npm run build` | Production build → `dist/`       |
+| `npm run preview` | Serve the production build locally |
+| `npm run lint`  | Run ESLint                       |
+| `npm test`      | Run tests (Vitest)               |
 
-## What technologies are used for this project?
+### Using Bun (optional)
 
-This project is built with:
+This project includes a `bun.lock` file. If you use [Bun](https://bun.sh/), you can run `bun install` and `bun run dev` instead of npm.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Tech stack
 
-## How can I deploy this project?
+- [Vite](https://vitejs.dev/) — build tool and dev server  
+- [React](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)  
+- [React Router](https://reactrouter.com/)  
+- [Tailwind CSS](https://tailwindcss.com/) + [shadcn/ui](https://ui.shadcn.com/)
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+## Contributing / pushing changes
 
-## Can I connect a custom domain to my Lovable project?
+1. Clone or pull the latest `main` branch.
+2. Create a branch for your work, or commit on `main` if you have access.
+3. After making changes:
 
-Yes, you can!
+   ```sh
+   git add .
+   git commit -m "Describe your change"
+   git push origin main
+   ```
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+If `git push` asks for credentials, use a [GitHub personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) or [SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh).
