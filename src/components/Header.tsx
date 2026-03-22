@@ -17,17 +17,18 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/90 backdrop-blur-sm">
-      <div className="container mx-auto flex h-12 max-w-5xl items-center justify-between px-3 sm:h-14 sm:px-6">
+      <div className="container mx-auto flex h-10 max-w-5xl items-center justify-between px-3 sm:h-12 sm:px-6">
         <Link
           to="/"
-          className="flex max-w-[min(200px,55vw)] shrink-0 items-center py-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-sm"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          className="flex shrink-0 items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-sm"
         >
           <img
             src={coverLogo}
             alt="COVER — home"
-            className="h-7 w-auto object-contain object-left sm:h-8"
+            className="h-9 w-auto object-contain object-left sm:h-10"
             width={200}
-            height={32}
+            height={40}
           />
         </Link>
 
