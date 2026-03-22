@@ -56,7 +56,7 @@ const Index = () => {
         <div className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-peach/40 blur-3xl" />
         <div className="pointer-events-none absolute -bottom-20 -left-20 h-60 w-60 rounded-full bg-accent/30 blur-3xl" />
 
-        <div className="container relative mx-auto max-w-4xl px-6 text-center">
+        <div className="container relative mx-auto max-w-4xl px-4 text-center sm:px-6">
           <FadeIn>
             <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10">
               <Leaf className="h-6 w-6 text-primary" />
