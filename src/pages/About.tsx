@@ -15,7 +15,7 @@ const About = () => (
         <FadeIn>
           <span className="text-xs font-semibold uppercase tracking-widest text-primary">About Us</span>
           <h1 className="mt-3 font-serif text-3xl font-semibold text-foreground md:text-4xl lg:text-5xl">
-            We are COVER 🍁
+            We are COVER
           </h1>
           <p className="mx-auto mt-5 max-w-xl text-muted-foreground leading-relaxed">
             A registered Canadian nonprofit standing with survivors of domestic abuse, assault,
