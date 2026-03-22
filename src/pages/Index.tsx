@@ -89,7 +89,7 @@ const Index = () => {
 
       {/* Welcome / Who We Are */}
       <section className="py-16 md:py-24">
-        <div className="container mx-auto max-w-5xl px-6">
+        <div className="container mx-auto max-w-5xl px-4 sm:px-6">
           <div className="grid items-center gap-10 md:grid-cols-2">
             <FadeIn>
               <div>
