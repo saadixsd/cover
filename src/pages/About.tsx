@@ -64,20 +64,20 @@ const About = () => (
         <div className="mt-12 grid gap-8 sm:grid-cols-2">
           {[
             {
-              title: "🎓 Education & Tuition Support",
-              text: "We help cover tuition and educational expenses for survivors, because rebuilding your life shouldn't mean giving up on your future.",
-            },
-            {
-              title: "🤝 Resource Connection",
-              text: "We connect you to shelters, counsellors, legal aid, and community services specific to your province and situation.",
-            },
-            {
-              title: "🧑‍🤝‍🧑 Youth Support",
-              text: "Dedicated programs for young people navigating abuse, difficult home situations, or relationship harm — because every young person deserves safety.",
-            },
-            {
-              title: "💛 Ongoing Care",
-              text: "We don't disappear after the first call. We follow up, check in, and stay with you through the journey for as long as you need.",
+               title: "Education & Tuition Support",
+               text: "We help cover tuition and educational expenses for survivors, because rebuilding your life shouldn't mean giving up on your future.",
+             },
+             {
+               title: "Resource Connection",
+               text: "We connect you to shelters, counsellors, legal aid, and community services specific to your province and situation.",
+             },
+             {
+               title: "Youth Support",
+               text: "Dedicated programs for young people navigating abuse, difficult home situations, or relationship harm — because every young person deserves safety.",
+             },
+             {
+               title: "Ongoing Care",
+               text: "We don't disappear after the first call. We follow up, check in, and stay with you through the journey for as long as you need.",
             },
           ].map((item, i) => (
             <FadeIn key={item.title} delay={i * 0.08}>
