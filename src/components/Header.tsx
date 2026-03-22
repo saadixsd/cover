@@ -25,6 +25,7 @@ const Header = () => {
           <span className="text-xl font-bold tracking-tight text-primary sm:text-2xl">
             COVER
           </span>
+          <Leaf className="h-5 w-5 text-primary sm:h-6 sm:w-6" />
         </Link>
 
         {/* Desktop nav */}
