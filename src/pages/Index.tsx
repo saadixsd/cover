@@ -52,7 +52,7 @@ const Index = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-soft-rose py-20 md:py-32 lg:py-40">
+      <section className="relative overflow-hidden bg-soft-rose py-14 sm:py-20 md:py-32 lg:py-40">
         <div className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-peach/40 blur-3xl" />
         <div className="pointer-events-none absolute -bottom-20 -left-20 h-60 w-60 rounded-full bg-accent/30 blur-3xl" />
 
