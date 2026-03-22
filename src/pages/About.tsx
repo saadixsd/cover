@@ -15,7 +15,7 @@ const About = () => (
         <FadeIn>
           <span className="text-xs font-semibold uppercase tracking-widest text-primary">About Us</span>
           <h1 className="mt-3 font-serif text-3xl font-semibold text-foreground md:text-4xl lg:text-5xl">
-            We are COVER 🍁
+            We are COVER
           </h1>
           <p className="mx-auto mt-5 max-w-xl text-muted-foreground leading-relaxed">
             A registered Canadian nonprofit standing with survivors of domestic abuse, assault,
@@ -64,20 +64,20 @@ const About = () => (
         <div className="mt-12 grid gap-8 sm:grid-cols-2">
           {[
             {
-              title: "🎓 Education & Tuition Support",
-              text: "We help cover tuition and educational expenses for survivors, because rebuilding your life shouldn't mean giving up on your future.",
-            },
-            {
-              title: "🤝 Resource Connection",
-              text: "We connect you to shelters, counsellors, legal aid, and community services specific to your province and situation.",
-            },
-            {
-              title: "🧑‍🤝‍🧑 Youth Support",
-              text: "Dedicated programs for young people navigating abuse, difficult home situations, or relationship harm — because every young person deserves safety.",
-            },
-            {
-              title: "💛 Ongoing Care",
-              text: "We don't disappear after the first call. We follow up, check in, and stay with you through the journey for as long as you need.",
+               title: "Education & Tuition Support",
+               text: "We help cover tuition and educational expenses for survivors, because rebuilding your life shouldn't mean giving up on your future.",
+             },
+             {
+               title: "Resource Connection",
+               text: "We connect you to shelters, counsellors, legal aid, and community services specific to your province and situation.",
+             },
+             {
+               title: "Youth Support",
+               text: "Dedicated programs for young people navigating abuse, difficult home situations, or relationship harm — because every young person deserves safety.",
+             },
+             {
+               title: "Ongoing Care",
+               text: "We don't disappear after the first call. We follow up, check in, and stay with you through the journey for as long as you need.",
             },
           ].map((item, i) => (
             <FadeIn key={item.title} delay={i * 0.08}>
@@ -140,21 +140,21 @@ const About = () => (
           </h2>
           <div className="mt-8 space-y-6 text-muted-foreground leading-relaxed text-left">
             <div className="rounded-xl bg-background p-6 shadow-sm">
-              <h3 className="font-serif text-lg font-semibold text-foreground">🔒 Confidentiality</h3>
+              <h3 className="font-serif text-lg font-semibold text-foreground">Confidentiality</h3>
               <p className="mt-2 text-sm">
                 Your privacy matters deeply. All communications with COVER are handled with strict confidentiality,
                 in accordance with Canadian privacy laws. We never share your information without your explicit consent.
               </p>
             </div>
             <div className="rounded-xl bg-background p-6 shadow-sm">
-              <h3 className="font-serif text-lg font-semibold text-foreground">💚 No Judgment</h3>
+              <h3 className="font-serif text-lg font-semibold text-foreground">No Judgment</h3>
               <p className="mt-2 text-sm">
                 Our approach is grounded in respect, safety, and support. We believe everyone deserves to
                 feel safe, heard, and valued — regardless of their background or circumstances.
               </p>
             </div>
             <div className="rounded-xl bg-background p-6 shadow-sm">
-              <h3 className="font-serif text-lg font-semibold text-foreground">🍁 Canadian Values</h3>
+              <h3 className="font-serif text-lg font-semibold text-foreground">Canadian Values</h3>
               <p className="mt-2 text-sm">
                 COVER is a registered Canadian nonprofit. We operate with transparency, accountability, and
                 a deep commitment to the people and communities we serve from coast to coast.

@@ -145,7 +145,7 @@ const ProvinceResources = () => {
         <FadeIn delay={0.2}>
           <div className="mt-14">
             <h3 className="text-center font-serif text-lg font-semibold text-foreground">
-              🍁 National Resources
+              National Resources
             </h3>
             <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {nationalResources.map((r) => (

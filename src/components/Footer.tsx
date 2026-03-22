@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="container mx-auto max-w-5xl px-4 py-10 sm:px-6 sm:py-12">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <h3 className="font-serif text-lg font-semibold text-foreground">COVER 🍁</h3>
+            <h3 className="font-serif text-lg font-semibold text-foreground">COVER</h3>
             <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
               Confidential support for students and individuals across Canada.
             </p>
@@ -81,7 +81,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-10 border-t border-border pt-6 text-center text-xs text-muted-foreground">
-          © {new Date().getFullYear()} COVER. All rights reserved. Based in Canada 🍁
+          © {new Date().getFullYear()} COVER. All rights reserved. Based in Canada.
         </div>
       </div>
     </footer>

@@ -68,7 +68,7 @@ const Index = () => {
           <FadeIn delay={0.15}>
             <p className="mx-auto mt-4 max-w-2xl text-sm text-muted-foreground sm:mt-6 sm:text-base md:text-lg leading-relaxed">
               COVER is more than a helpline — we're a Canadian nonprofit that supports survivors of
-              domestic abuse and assault with education funding, resource connection, and ongoing care. 🍁
+              domestic abuse and assault with education funding, resource connection, and ongoing care.
             </p>
           </FadeIn>
           <FadeIn delay={0.3}>
