@@ -205,7 +205,7 @@ const Index = () => {
 
       {/* CTA */}
       <section className="py-16 md:py-24">
-        <div className="container mx-auto max-w-3xl px-6 text-center">
+        <div className="container mx-auto max-w-3xl px-4 text-center sm:px-6">
           <FadeIn>
             <h2 className="font-serif text-2xl font-semibold text-foreground md:text-3xl">
               When you're ready, we're here.
