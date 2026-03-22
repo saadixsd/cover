@@ -61,7 +61,7 @@ const Index = () => {
             <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10">
               <Leaf className="h-6 w-6 text-primary" />
             </div>
-            <h1 className="font-serif text-4xl font-semibold leading-tight text-foreground sm:text-5xl lg:text-6xl">
+            <h1 className="font-serif text-3xl font-semibold leading-tight text-foreground sm:text-4xl md:text-5xl lg:text-6xl">
               You deserve to feel safe.
             </h1>
           </FadeIn>
