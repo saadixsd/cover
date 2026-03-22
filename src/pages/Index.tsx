@@ -52,21 +52,21 @@ const Index = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-soft-rose py-20 md:py-32 lg:py-40">
+      <section className="relative overflow-hidden bg-soft-rose py-14 sm:py-20 md:py-32 lg:py-40">
         <div className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-peach/40 blur-3xl" />
         <div className="pointer-events-none absolute -bottom-20 -left-20 h-60 w-60 rounded-full bg-accent/30 blur-3xl" />
 
-        <div className="container relative mx-auto max-w-4xl px-6 text-center">
+        <div className="container relative mx-auto max-w-4xl px-4 text-center sm:px-6">
           <FadeIn>
             <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10">
               <Leaf className="h-6 w-6 text-primary" />
             </div>
-            <h1 className="font-serif text-4xl font-semibold leading-tight text-foreground sm:text-5xl lg:text-6xl">
+            <h1 className="font-serif text-3xl font-semibold leading-tight text-foreground sm:text-4xl md:text-5xl lg:text-6xl">
               You deserve to feel safe.
             </h1>
           </FadeIn>
           <FadeIn delay={0.15}>
-            <p className="mx-auto mt-6 max-w-2xl text-base text-muted-foreground sm:text-lg leading-relaxed">
+            <p className="mx-auto mt-4 max-w-2xl text-sm text-muted-foreground sm:mt-6 sm:text-base md:text-lg leading-relaxed">
               COVER is more than a helpline — we're a Canadian nonprofit that supports survivors of
               domestic abuse and assault with education funding, resource connection, and ongoing care. 🍁
             </p>
@@ -89,7 +89,7 @@ const Index = () => {
 
       {/* Welcome / Who We Are */}
       <section className="py-16 md:py-24">
-        <div className="container mx-auto max-w-5xl px-6">
+        <div className="container mx-auto max-w-5xl px-4 sm:px-6">
           <div className="grid items-center gap-10 md:grid-cols-2">
             <FadeIn>
               <div>
@@ -129,7 +129,7 @@ const Index = () => {
 
       {/* What We Do */}
       <section className="bg-cream py-16 md:py-24">
-        <div className="container mx-auto max-w-6xl px-6">
+        <div className="container mx-auto max-w-6xl px-4 sm:px-6">
           <FadeIn>
             <div className="text-center">
               <span className="text-xs font-semibold uppercase tracking-widest text-primary">What We Do</span>
@@ -162,7 +162,7 @@ const Index = () => {
 
       {/* Impact / Reassurance Banner */}
       <section className="relative overflow-hidden py-16 md:py-24">
-        <div className="container mx-auto max-w-5xl px-6">
+        <div className="container mx-auto max-w-5xl px-4 sm:px-6">
           <div className="grid items-center gap-10 md:grid-cols-2">
             <FadeIn>
               <div className="overflow-hidden rounded-2xl shadow-lg">
@@ -205,7 +205,7 @@ const Index = () => {
 
       {/* CTA */}
       <section className="py-16 md:py-24">
-        <div className="container mx-auto max-w-3xl px-6 text-center">
+        <div className="container mx-auto max-w-3xl px-4 text-center sm:px-6">
           <FadeIn>
             <h2 className="font-serif text-2xl font-semibold text-foreground md:text-3xl">
               When you're ready, we're here.
