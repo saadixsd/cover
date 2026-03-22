@@ -81,7 +81,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-10 border-t border-border pt-6 text-center text-xs text-muted-foreground">
-          © {new Date().getFullYear()} COVER. All rights reserved. Based in Canada 🍁
+          © {new Date().getFullYear()} COVER. All rights reserved. Based in Canada.
         </div>
       </div>
     </footer>

@@ -140,21 +140,21 @@ const About = () => (
           </h2>
           <div className="mt-8 space-y-6 text-muted-foreground leading-relaxed text-left">
             <div className="rounded-xl bg-background p-6 shadow-sm">
-              <h3 className="font-serif text-lg font-semibold text-foreground">🔒 Confidentiality</h3>
+              <h3 className="font-serif text-lg font-semibold text-foreground">Confidentiality</h3>
               <p className="mt-2 text-sm">
                 Your privacy matters deeply. All communications with COVER are handled with strict confidentiality,
                 in accordance with Canadian privacy laws. We never share your information without your explicit consent.
               </p>
             </div>
             <div className="rounded-xl bg-background p-6 shadow-sm">
-              <h3 className="font-serif text-lg font-semibold text-foreground">💚 No Judgment</h3>
+              <h3 className="font-serif text-lg font-semibold text-foreground">No Judgment</h3>
               <p className="mt-2 text-sm">
                 Our approach is grounded in respect, safety, and support. We believe everyone deserves to
                 feel safe, heard, and valued — regardless of their background or circumstances.
               </p>
             </div>
             <div className="rounded-xl bg-background p-6 shadow-sm">
-              <h3 className="font-serif text-lg font-semibold text-foreground">🍁 Canadian Values</h3>
+              <h3 className="font-serif text-lg font-semibold text-foreground">Canadian Values</h3>
               <p className="mt-2 text-sm">
                 COVER is a registered Canadian nonprofit. We operate with transparency, accountability, and
                 a deep commitment to the people and communities we serve from coast to coast.

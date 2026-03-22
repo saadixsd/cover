@@ -25,7 +25,6 @@ const Header = () => {
           <span className="text-xl font-bold tracking-tight text-primary sm:text-2xl">
             COVER
           </span>
-          <span className="text-xl sm:text-2xl" role="img" aria-label="maple leaf">🍁</span>
         </Link>
 
         {/* Desktop nav */}
