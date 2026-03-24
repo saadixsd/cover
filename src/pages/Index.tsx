@@ -187,8 +187,9 @@ const Index = () => {
                 </p>
                 <div className="mt-6 rounded-xl bg-soft-rose p-5">
                   <p className="text-sm text-foreground leading-relaxed">
-                    💛 "You don't have to have it all figured out. You just have to take the first step.
-                    We'll walk with you from there."
+                    {
+                      "\u201cYou don't have to have it all figured out. You just have to take the first step. We'll walk with you from there.\u201d"
+                    }
                   </p>
                 </div>
               </div>
