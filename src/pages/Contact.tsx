@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
+import { CONTACT_EMAIL, submitContactForm } from "@/lib/contact";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -14,25 +15,38 @@ const Contact = () => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [safeToContact, setSafeToContact] = useState(false);
+  const [honeypot, setHoneypot] = useState("");
   const [sending, setSending] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!message.trim()) return;
+    if (!message.trim() || honeypot) return;
 
     setSending(true);
-    // Simulate send
-    setTimeout(() => {
+    const result = await submitContactForm({
+      name,
+      email,
+      message,
+      safeToContact,
+    });
+
+    if (result.ok) {
       toast({
-        title: "Message received",
+        title: "Message sent",
         description: "Thank you for reaching out. We'll respond as soon as we can.",
       });
       setMessage("");
       setEmail("");
       setName("");
       setSafeToContact(false);
-      setSending(false);
-    }, 800);
+    } else {
+      toast({
+        variant: "destructive",
+        title: "Could not send",
+        description: result.error,
+      });
+    }
+    setSending(false);
   };
 
   return (
@@ -46,10 +60,28 @@ const Contact = () => {
             <p className="mt-4 text-muted-foreground">
               We'll respond as soon as we can. If you would prefer not to give your name or email, that's okay.
             </p>
+            <p className="mt-3 text-sm text-muted-foreground">
+              You can also email us directly at{" "}
+              <a href={`mailto:${CONTACT_EMAIL}`} className="font-medium text-primary underline-offset-4 hover:underline">
+                {CONTACT_EMAIL}
+              </a>
+              .
+            </p>
           </FadeIn>
 
           <FadeIn delay={0.1}>
-            <form onSubmit={handleSubmit} className="mt-10 space-y-6">
+            <form onSubmit={handleSubmit} className="mt-10 space-y-6" noValidate>
+              {/* Honeypot — leave empty (bots often fill hidden fields). */}
+              <input
+                type="text"
+                name="company"
+                value={honeypot}
+                onChange={(e) => setHoneypot(e.target.value)}
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                className="pointer-events-none absolute left-[-9999px] h-0 max-h-0 w-0 overflow-hidden opacity-0"
+              />
               <div className="space-y-2">
                 <Label htmlFor="name" className="text-foreground">Name <span className="text-muted-foreground text-xs">(optional)</span></Label>
                 <Input

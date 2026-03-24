@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ExternalLink, Leaf } from "lucide-react";
+import { CONTACT_EMAIL } from "@/lib/contact";
 
 const Footer = () => {
   return (
@@ -13,6 +14,14 @@ const Footer = () => {
             </p>
             <p className="mt-3 text-xs text-muted-foreground">
               A registered Canadian nonprofit organization.
+            </p>
+            <p className="mt-3 text-sm">
+              <a
+                href={`mailto:${CONTACT_EMAIL}`}
+                className="text-primary underline-offset-4 hover:underline"
+              >
+                {CONTACT_EMAIL}
+              </a>
             </p>
           </div>
 

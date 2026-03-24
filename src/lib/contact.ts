@@ -1,0 +1,65 @@
+/** Primary inbox for website inquiries — keep in sync across the site. */
+export const CONTACT_EMAIL = "info@coverinitiative.org" as const;
+
+const FORMSUBMIT_AJAX = `https://formsubmit.co/ajax/${encodeURIComponent(CONTACT_EMAIL)}`;
+
+export type ContactFormPayload = {
+  name: string;
+  email: string;
+  message: string;
+  safeToContact: boolean;
+};
+
+/**
+ * Sends the contact form via FormSubmit (HTTPS JSON). Submissions are delivered to {@link CONTACT_EMAIL}.
+ * The first submission may require activating FormSubmit from an email sent to that inbox.
+ */
+export async function submitContactForm(payload: ContactFormPayload): Promise<{ ok: true } | { ok: false; error: string }> {
+  const name = payload.name.trim() || "Not provided";
+  const email = payload.email.trim();
+  const messageBody = [
+    payload.message.trim(),
+    "",
+    `Safe to respond to this address: ${payload.safeToContact ? "Yes" : "No"}`,
+  ].join("\n");
+
+  const body: Record<string, string> = {
+    name,
+    _subject: "COVER — Contact form submission",
+    message: messageBody,
+  };
+
+  if (email) {
+    body.email = email;
+  }
+
+  let res: Response;
+  try {
+    res = await fetch(FORMSUBMIT_AJAX, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(body),
+    });
+  } catch {
+    return { ok: false, error: "Network error. Check your connection or email us directly." };
+  }
+
+  let data: { success?: boolean; message?: string } = {};
+  try {
+    data = (await res.json()) as typeof data;
+  } catch {
+    /* FormSubmit may not always return JSON on hard errors */
+  }
+
+  if (res.ok && data.success !== false) {
+    return { ok: true };
+  }
+
+  return {
+    ok: false,
+    error: typeof data.message === "string" ? data.message : "Could not send your message. Try emailing us directly.",
+  };
+}
