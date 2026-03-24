@@ -17,6 +17,10 @@ export type ContactFormPayload = {
 export async function submitContactForm(payload: ContactFormPayload): Promise<{ ok: true } | { ok: false; error: string }> {
   const name = payload.name.trim() || "Not provided";
   const email = payload.email.trim();
+  if (!email) {
+    return { ok: false, error: "Please enter your email so we can respond." };
+  }
+
   const messageBody = [
     payload.message.trim(),
     "",
@@ -25,13 +29,10 @@ export async function submitContactForm(payload: ContactFormPayload): Promise<{ 
 
   const body: Record<string, string> = {
     name,
+    email,
     _subject: "COVER — Contact form submission",
     message: messageBody,
   };
-
-  if (email) {
-    body.email = email;
-  }
 
   let res: Response;
   try {

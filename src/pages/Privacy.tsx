@@ -15,7 +15,8 @@ const Privacy = () => (
             <h2 className="font-serif text-xl font-semibold text-foreground">Privacy & Personal Information</h2>
             <p>
               At COVER, your privacy and safety are our highest priority. We collect only the minimum information
-              necessary to respond to your inquiries (such as your message and optional contact details).
+              necessary to respond to your inquiries: your message, an email address so we can reply, and your name
+              if you choose to share it.
             </p>
 
             <h2 className="font-serif text-xl font-semibold text-foreground">What We Do Not Do</h2>

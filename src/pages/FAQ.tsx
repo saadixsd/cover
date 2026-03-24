@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout";
 import FadeIn from "@/components/FadeIn";
+import { CONTACT_EMAIL } from "@/lib/contact";
 import {
   Accordion,
   AccordionContent,
@@ -26,7 +27,7 @@ const faqs = [
   },
   {
     q: "Can I remain anonymous?",
-    a: "Yes. Providing a name or email is entirely optional unless you would like a reply.",
+    a: `Your name is optional, but we ask for an email address on the contact form so our team can reply. If you need a safer option, use an email you're comfortable checking or email us directly at ${CONTACT_EMAIL} from an account that works for you.`,
   },
   {
     q: "Can I delete my messages?",

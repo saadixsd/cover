@@ -22,6 +22,16 @@ const Contact = () => {
     e.preventDefault();
     if (!message.trim() || honeypot) return;
 
+    const trimmedEmail = email.trim();
+    if (!trimmedEmail) {
+      toast({
+        variant: "destructive",
+        title: "Email required",
+        description: "Please add your email so we can reply to you.",
+      });
+      return;
+    }
+
     setSending(true);
     const result = await submitContactForm({
       name,
@@ -58,7 +68,8 @@ const Contact = () => {
               Reach Out When You're Ready
             </h1>
             <p className="mt-4 text-muted-foreground">
-              We'll respond as soon as we can. If you would prefer not to give your name or email, that's okay.
+              We&apos;ll respond as soon as we can. Please include your email so we can write back. Your name is
+              optional if you prefer.
             </p>
             <p className="mt-3 text-sm text-muted-foreground">
               You can also email us directly at{" "}
@@ -70,7 +81,7 @@ const Contact = () => {
           </FadeIn>
 
           <FadeIn delay={0.1}>
-            <form onSubmit={handleSubmit} className="mt-10 space-y-6" noValidate>
+            <form onSubmit={handleSubmit} className="mt-10 space-y-6">
               {/* Honeypot — leave empty (bots often fill hidden fields). */}
               <input
                 type="text"
@@ -95,7 +106,10 @@ const Contact = () => {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="email" className="text-foreground">Email <span className="text-muted-foreground text-xs">(optional)</span></Label>
+                <Label htmlFor="email" className="text-foreground">
+                  Email <span className="text-primary text-xs">*</span>
+                  <span className="text-muted-foreground text-xs font-normal"> (so we can reply)</span>
+                </Label>
                 <Input
                   id="email"
                   type="email"
@@ -103,6 +117,9 @@ const Contact = () => {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="your@email.com"
                   maxLength={255}
+                  required
+                  autoComplete="email"
+                  inputMode="email"
                   className="rounded-lg"
                 />
               </div>
@@ -131,7 +148,11 @@ const Contact = () => {
                 </Label>
               </div>
 
-              <Button type="submit" disabled={!message.trim() || sending} className="rounded-full px-8">
+              <Button
+                type="submit"
+                disabled={!message.trim() || !email.trim() || sending}
+                className="rounded-full px-8"
+              >
                 {sending ? "Sending…" : "Send Message"}
               </Button>
             </form>
