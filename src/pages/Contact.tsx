@@ -53,7 +53,7 @@ const Contact = () => {
       toast({
         variant: "destructive",
         title: "Could not send",
-        description: !result.ok ? result.error : "",
+        description: result.error,
       });
     }
     setSending(false);
