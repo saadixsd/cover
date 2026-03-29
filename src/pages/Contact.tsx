@@ -49,7 +49,7 @@ const Contact = () => {
       setEmail("");
       setName("");
       setSafeToContact(false);
-    } else {
+    } else if (!result.ok) {
       toast({
         variant: "destructive",
         title: "Could not send",
