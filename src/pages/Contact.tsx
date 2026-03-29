@@ -49,11 +49,12 @@ const Contact = () => {
       setEmail("");
       setName("");
       setSafeToContact(false);
-    } else if (!result.ok) {
+    } else {
+      const errorMsg = (result as { ok: false; error: string }).error;
       toast({
         variant: "destructive",
         title: "Could not send",
-        description: result.error,
+        description: errorMsg,
       });
     }
     setSending(false);
