@@ -40,7 +40,13 @@ const Contact = () => {
       safeToContact,
     });
 
-    if (result.ok) {
+    if (!result.ok) {
+      toast({
+        variant: "destructive",
+        title: "Could not send",
+        description: result.error,
+      });
+    } else {
       toast({
         title: "Message sent",
         description: "Thank you for reaching out. We'll respond as soon as we can.",
@@ -49,13 +55,6 @@ const Contact = () => {
       setEmail("");
       setName("");
       setSafeToContact(false);
-    } else {
-      const errorMsg = (result as { ok: false; error: string }).error;
-      toast({
-        variant: "destructive",
-        title: "Could not send",
-        description: errorMsg,
-      });
     }
     setSending(false);
   };
