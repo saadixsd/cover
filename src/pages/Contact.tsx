@@ -40,7 +40,7 @@ const Contact = () => {
       safeToContact,
     });
 
-    if (!result.ok) {
+    if (result.ok === false) {
       toast({
         variant: "destructive",
         title: "Could not send",
