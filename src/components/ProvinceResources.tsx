@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { MapPin, Phone, ExternalLink, Shield, Scale, Home } from "lucide-react";
+import { Link } from "react-router-dom";
 import { provinces, nationalResources, type ProvinceResource } from "@/data/provinceResources";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent } from "@/components/ui/card";
@@ -165,6 +166,14 @@ const ProvinceResources = () => {
                   </div>
                 </a>
               ))}
+            </div>
+            <div className="mt-8 text-center">
+              <Link
+                to="/resources"
+                className="inline-flex items-center gap-1.5 rounded-full bg-primary px-5 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+              >
+                Browse our full directory of organizations →
+              </Link>
             </div>
           </div>
         </FadeIn>
