@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Layout from "@/components/Layout";
 import FadeIn from "@/components/FadeIn";
+import PageHero from "@/components/PageHero";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -61,17 +62,16 @@ const Contact = () => {
 
   return (
     <Layout>
-      <section className="py-20">
+      <PageHero
+        eyebrow="Contact"
+        title="Reach out when"
+        highlight="you're ready"
+        description={<>We'll respond as soon as we can. Your name is optional — only your email is required so we can write back.</>}
+      />
+      <section className="py-16 md:py-20">
         <div className="container mx-auto max-w-2xl px-6">
           <FadeIn>
-            <h1 className="font-serif text-3xl font-semibold text-foreground md:text-4xl">
-              Reach Out When You're Ready
-            </h1>
-            <p className="mt-4 text-muted-foreground">
-              We&apos;ll respond as soon as we can. Please include your email so we can write back. Your name is
-              optional if you prefer.
-            </p>
-            <p className="mt-3 text-sm text-muted-foreground">
+            <p className="text-center text-sm text-muted-foreground">
               You can also email us directly at{" "}
               <a href={`mailto:${CONTACT_EMAIL}`} className="font-medium text-primary underline-offset-4 hover:underline">
                 {CONTACT_EMAIL}
@@ -81,7 +81,7 @@ const Contact = () => {
           </FadeIn>
 
           <FadeIn delay={0.1}>
-            <form onSubmit={handleSubmit} className="mt-10 space-y-6">
+            <form onSubmit={handleSubmit} className="mt-10 space-y-6 rounded-2xl border border-border bg-background p-6 shadow-elegant md:p-8">
               {/* Honeypot — leave empty (bots often fill hidden fields). */}
               <input
                 type="text"
