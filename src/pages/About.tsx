@@ -18,7 +18,7 @@ const About = () => (
             We are COVER
           </h1>
           <p className="mx-auto mt-5 max-w-xl text-muted-foreground leading-relaxed">
-            A registered Canadian nonprofit standing with survivors of domestic abuse, assault,
+            A Montreal-based Canadian nonprofit standing with survivors of domestic abuse, assault,
             and unsafe situations — providing real support that goes far beyond a phone call.
           </p>
         </FadeIn>
@@ -38,14 +38,20 @@ const About = () => (
             <div>
               <h2 className="font-serif text-2xl font-semibold text-foreground md:text-3xl">Our Mission</h2>
               <p className="mt-5 text-muted-foreground leading-relaxed">
-                COVER exists to support people and survivors affected by domestic abuse, assault, and
-                situations that feel unsafe. We aren't just a helpline — we actively help cover tuition
-                and education costs, connect people to the right resources, and ensure youth get the
-                support they need to rebuild their lives.
+                Our mission is to reduce the rate of domestic violence and empower survivors through
+                access to education. We believe education is one of the strongest paths to independence,
+                stability, and a future free from harm — and we work to make that path reachable for
+                the people who need it most.
               </p>
               <p className="mt-4 text-muted-foreground leading-relaxed">
-                From coast to coast, we meet people where they are — with compassion, confidentiality,
-                and a deep commitment to walking alongside them through every step.
+                Today, COVER focuses on awareness, connection to trusted resources, and walking
+                alongside survivors with compassion and confidentiality. As our community grows and
+                we secure more funding, we plan to expand into direct tuition and educational
+                support — but we are not offering financial assistance at this time.
+              </p>
+              <p className="mt-4 text-muted-foreground leading-relaxed">
+                We are based in Montreal and currently focused on supporting our local community,
+                with the goal of expanding across Quebec and Canada over time.
               </p>
             </div>
           </FadeIn>
@@ -64,12 +70,12 @@ const About = () => (
         <div className="mt-12 grid gap-8 sm:grid-cols-2">
           {[
             {
-               title: "Education & Tuition Support",
-               text: "We help cover tuition and educational expenses for survivors, because rebuilding your life shouldn't mean giving up on your future.",
+               title: "Education as Empowerment",
+               text: "Education is at the heart of our mission. We're building toward direct tuition and educational support for survivors as funding grows — because rebuilding your life shouldn't mean giving up on your future.",
              },
              {
                title: "Resource Connection",
-               text: "We connect you to shelters, counsellors, legal aid, and community services specific to your province and situation.",
+               text: "We connect you to shelters, counsellors, legal aid, and community services across Montreal and Quebec — matched to your situation.",
              },
              {
                title: "Youth Support",
@@ -99,7 +105,8 @@ const About = () => (
             <div>
               <h2 className="font-serif text-2xl font-semibold text-foreground md:text-3xl">Who We Support</h2>
               <p className="mt-5 text-muted-foreground leading-relaxed">
-                If you're going through something difficult, you belong here. We support people across all of Canada:
+                If you're going through something difficult, you belong here. We currently support people in
+                Montreal and the surrounding area:
               </p>
               <ul className="mt-4 ml-1 space-y-3">
                 {[
@@ -156,8 +163,8 @@ const About = () => (
             <div className="rounded-xl bg-background p-6 shadow-sm">
               <h3 className="font-serif text-lg font-semibold text-foreground">Canadian Values</h3>
               <p className="mt-2 text-sm">
-                COVER is a registered Canadian nonprofit. We operate with transparency, accountability, and
-                a deep commitment to the people and communities we serve from coast to coast.
+                COVER is a Canadian nonprofit based in Montreal. We operate with transparency, accountability,
+                and a deep commitment to the local community we serve — with the goal of growing our reach over time.
               </p>
             </div>
           </div>
@@ -173,7 +180,7 @@ const About = () => (
             You don't have to do this alone.
           </h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            Whether you need help with tuition, resources, or just someone to talk to — we're here.
+            Whether you need trusted resources, guidance, or just someone to talk to — we're here.
             Take the first step whenever you're ready.
           </p>
           <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
