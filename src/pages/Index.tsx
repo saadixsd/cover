@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Heart, Shield, GraduationCap, Leaf, Users, BookOpen, HandHeart, ArrowRight } from "lucide-react";
+import { Heart, Shield, GraduationCap, Users, BookOpen, HandHeart, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Layout from "@/components/Layout";
@@ -58,9 +58,6 @@ const Index = () => {
 
         <div className="container relative mx-auto max-w-4xl px-4 text-center sm:px-6">
           <FadeIn>
-            <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10">
-              <Leaf className="h-6 w-6 text-primary" />
-            </div>
             <h1 className="font-serif text-3xl font-semibold leading-tight text-foreground sm:text-4xl md:text-5xl lg:text-6xl">
               You deserve to feel safe.
             </h1>

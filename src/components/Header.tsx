@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
-import { Menu, X, Heart, Leaf } from "lucide-react";
+import { Menu, X, Heart } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
@@ -26,7 +26,6 @@ const Header = () => {
           <span className="text-xl font-bold tracking-tight text-primary sm:text-2xl">
             COVER
           </span>
-          <Leaf className="h-5 w-5 text-primary sm:h-6 sm:w-6" />
         </Link>
 
         {/* Desktop nav */}
