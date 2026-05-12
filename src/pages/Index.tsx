@@ -6,155 +6,141 @@ import Layout from "@/components/Layout";
 import FadeIn from "@/components/FadeIn";
 import ProvinceResources from "@/components/ProvinceResources";
 import DonationSection from "@/components/DonationSection";
+import { GOFUNDME_CAMPAIGN_URL } from "@/lib/donate";
 import peaceSign from "@/assets/peace-sign.jpg";
 import whiteRibbon from "@/assets/white-ribbon.jpg";
 
 const helpCards = [
   {
     icon: GraduationCap,
-    title: "Tuition & Education",
+    title: "Tuition & education",
     description:
       "We help cover tuition costs and connect survivors with educational opportunities so they can rebuild and thrive.",
   },
   {
     icon: Users,
-    title: "Resource Connection",
+    title: "Resource connection",
     description:
-      "We connect you with shelters, counsellors, legal aid, and community services tailored to your province.",
+      "We connect you with shelters, counsellors, legal aid, and community services tailored to your situation.",
   },
   {
     icon: Shield,
-    title: "Safety & Support",
+    title: "Safety & support",
     description:
       "From safety planning to emotional support, we walk alongside you — at your pace, on your terms.",
   },
   {
     icon: BookOpen,
-    title: "Youth Programs",
+    title: "Youth programs",
     description:
       "Dedicated support for young people navigating difficult situations at home, school, or in relationships.",
   },
   {
     icon: Heart,
-    title: "Survivor Advocacy",
+    title: "Survivor advocacy",
     description:
       "We stand with survivors of domestic abuse and assault, amplifying their voices and fighting for change.",
   },
   {
     icon: HandHeart,
-    title: "Ongoing Care",
+    title: "Ongoing care",
     description:
-      "We're not just a helpline. We stay with you through the journey — follow-ups, check-ins, and continued care.",
+      "We stay with you through the journey — follow-ups, check-ins, and continued care when you want it.",
   },
 ];
 
 const Index = () => {
   return (
     <Layout>
-      {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-hero animate-shimmer py-14 sm:py-20 md:py-32 lg:py-40">
-        <div className="pointer-events-none absolute -top-32 -right-32 h-96 w-96 rounded-full bg-primary/30 blur-3xl animate-blob" />
-        <div className="pointer-events-none absolute -bottom-24 -left-24 h-80 w-80 rounded-full bg-warm-red/40 blur-3xl animate-blob-slow" />
-        <div className="pointer-events-none absolute top-1/3 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-peach/50 blur-3xl animate-float" />
-
-        <div className="container relative z-10 mx-auto max-w-4xl px-4 text-center sm:px-6">
+      {/* Hero — calm nonprofit layout, white field */}
+      <section className="border-b border-border bg-background py-16 sm:py-20 md:py-28">
+        <div className="container mx-auto max-w-3xl px-4 text-center sm:px-6">
           <FadeIn>
-            <span className="inline-block rounded-full bg-background/70 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-primary backdrop-blur-sm shadow-sm">
-              A safe space for survivors
-            </span>
-            <h1 className="mt-6 font-serif text-4xl font-bold leading-[1.05] text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
-              You deserve to <span className="text-gradient italic">feel safe.</span>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">Canadian nonprofit</p>
+            <p className="mt-5 font-serif text-lg font-medium leading-snug text-primary sm:text-xl md:text-2xl">
+              Asking questions has never been this easy.
+            </p>
+            <h1 className="mt-4 font-serif text-4xl font-semibold leading-[1.08] tracking-tight text-foreground sm:text-5xl md:text-6xl">
+              Success within reach
             </h1>
           </FadeIn>
-          <FadeIn delay={0.15}>
-            <p className="mx-auto mt-6 max-w-2xl text-base text-foreground/80 sm:text-lg md:text-xl leading-relaxed">
-              COVER is more than a helpline — we're a Canadian nonprofit that supports survivors of
-              domestic abuse and assault with education funding, resource connection, and ongoing care.
+          <FadeIn delay={0.1}>
+            <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+              COVER supports survivors of domestic abuse and assault with education funding, trusted referrals, and
+              confidential follow-up — so no one has to figure it out alone.
             </p>
           </FadeIn>
-          <FadeIn delay={0.3}>
-            <div className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:gap-4">
-              <Button asChild size="lg" className="w-full rounded-full px-8 shadow-elegant transition-transform hover:scale-105 sm:w-auto">
-                <Link to="/contact">Get Support</Link>
+          <FadeIn delay={0.2}>
+            <div className="mt-10 flex flex-col items-stretch gap-3 sm:flex-row sm:justify-center sm:gap-4">
+              <Button asChild size="lg" className="w-full rounded-md px-8 sm:w-auto">
+                <Link to="/contact">Get support</Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="w-full rounded-full border-foreground/20 bg-background/60 px-8 backdrop-blur-sm transition-transform hover:scale-105 sm:w-auto">
-                <Link to="/about">
-                  Learn About Us
-                  <ArrowRight className="ml-1 h-4 w-4" />
-                </Link>
+              <Button asChild variant="outline" size="lg" className="w-full rounded-md border-border px-8 sm:w-auto">
+                <a href="#our-story">
+                  About COVER
+                  <ArrowRight className="ml-1 h-4 w-4" aria-hidden />
+                </a>
               </Button>
             </div>
           </FadeIn>
         </div>
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-warm opacity-60" />
       </section>
 
-      {/* Welcome / Who We Are */}
-      <section className="py-16 md:py-24">
+      {/* Our story — former About destination */}
+      <section id="our-story" className="scroll-mt-24 py-16 md:py-24">
         <div className="container mx-auto max-w-5xl px-4 sm:px-6">
-          <div className="grid items-center gap-10 md:grid-cols-2">
+          <div className="grid items-center gap-12 md:grid-cols-2 md:gap-14">
             <FadeIn>
               <div>
-                <span className="text-xs font-semibold uppercase tracking-widest text-primary">Welcome to COVER</span>
-                <h2 className="mt-3 font-serif text-2xl font-semibold text-foreground md:text-3xl leading-snug">
-                  We're here for you — not just today, but through the journey.
+                <h2 className="font-serif text-2xl font-semibold leading-snug text-foreground md:text-3xl">
+                  Who we are
                 </h2>
-                <p className="mt-5 text-muted-foreground leading-relaxed">
-                  COVER supports survivors of domestic abuse, assault, and unsafe living situations across Canada.
-                  We cover tuition and education costs, connect youth and adults to the right resources,
-                  and provide the kind of care that goes far beyond a phone call.
+                <p className="mt-5 leading-relaxed text-muted-foreground">
+                  COVER is a Montreal-based nonprofit working to reduce domestic violence and empower survivors through
+                  access to education and care. We believe education is one of the strongest paths to independence —
+                  and we help make that path reachable.
                 </p>
-                <p className="mt-4 text-muted-foreground leading-relaxed">
-                  Whether you're a student, a newcomer, or someone who just needs to know they're not alone —
-                  this is your safe space. No judgment. No pressure. Just real support.
+                <p className="mt-4 leading-relaxed text-muted-foreground">
+                  Whether you are a student, a newcomer, or someone who needs to know you are not alone, you can reach
+                  out on your own terms. No judgment and no pressure — just clear information and real people.
                 </p>
-                <Button asChild variant="link" className="mt-4 px-0 text-primary">
-                  <Link to="/about">
-                    Read our full story <ArrowRight className="ml-1 h-4 w-4" />
+                <Button asChild variant="link" className="mt-2 h-auto px-0 text-primary">
+                  <Link to="/contact">
+                    Talk to our team <ArrowRight className="ml-1 h-4 w-4" aria-hidden />
                   </Link>
                 </Button>
               </div>
             </FadeIn>
-            <FadeIn delay={0.15}>
-              <div className="overflow-hidden rounded-2xl shadow-lg">
-                <img
-                  src={peaceSign}
-                  alt="COVER community support"
-                  className="h-full w-full object-cover"
-                  loading="lazy"
-                />
-              </div>
+            <FadeIn delay={0.12}>
+              <figure className="overflow-hidden rounded-md border border-border shadow-sm">
+                <img src={peaceSign} alt="Community support at COVER" className="h-full w-full object-cover" loading="lazy" />
+              </figure>
             </FadeIn>
           </div>
         </div>
       </section>
 
-      {/* What We Do */}
-      <section className="bg-cream py-16 md:py-24">
+      <section className="border-y border-border bg-cream py-16 md:py-24">
         <div className="container mx-auto max-w-6xl px-4 sm:px-6">
           <FadeIn>
-            <div className="text-center">
-              <span className="text-xs font-semibold uppercase tracking-widest text-primary">What We Do</span>
-              <h2 className="mt-3 font-serif text-2xl font-semibold text-foreground md:text-3xl">
-                More than a helpline — real, lasting support
-              </h2>
-              <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-                From covering tuition to connecting you with local resources, here's how COVER helps survivors
-                rebuild and move forward.
+            <div className="mx-auto max-w-2xl text-center">
+              <h2 className="font-serif text-2xl font-semibold text-foreground md:text-3xl">What we do</h2>
+              <p className="mt-4 text-muted-foreground leading-relaxed">
+                From tuition support to local referrals, here is how we help survivors rebuild at a pace that feels
+                safe.
               </p>
             </div>
           </FadeIn>
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {helpCards.map((card, i) => (
-              <FadeIn key={card.title} delay={i * 0.08}>
-                <Card className="group relative h-full overflow-hidden border-none bg-background shadow-sm transition-all duration-300 hover:shadow-elegant hover:-translate-y-2">
-                  <div className="absolute inset-x-0 top-0 h-1 bg-gradient-warm opacity-0 transition-opacity group-hover:opacity-100" />
-                  <CardContent className="p-6 sm:p-8">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-warm text-primary-foreground shadow-md transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
-                      <card.icon className="h-6 w-6" />
+              <FadeIn key={card.title} delay={i * 0.06}>
+                <Card className="h-full border border-border bg-background shadow-none transition-shadow hover:shadow-md">
+                  <CardContent className="p-6 sm:p-7">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-md border border-border bg-muted/50 text-primary">
+                      <card.icon className="h-5 w-5" aria-hidden />
                     </div>
-                    <h3 className="mt-5 font-serif text-lg font-semibold text-foreground">{card.title}</h3>
-                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{card.description}</p>
+                    <h3 className="mt-4 font-serif text-lg font-semibold text-foreground">{card.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{card.description}</p>
                   </CardContent>
                 </Card>
               </FadeIn>
@@ -163,69 +149,58 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Impact / Reassurance Banner */}
-      <section className="relative overflow-hidden py-16 md:py-24">
+      <section className="py-16 md:py-24">
         <div className="container mx-auto max-w-5xl px-4 sm:px-6">
-          <div className="grid items-center gap-10 md:grid-cols-2">
+          <div className="grid items-center gap-12 md:grid-cols-2 md:gap-14">
             <FadeIn>
-              <div className="overflow-hidden rounded-2xl shadow-lg">
+              <figure className="overflow-hidden rounded-md border border-border shadow-sm">
                 <img
                   src={whiteRibbon}
                   alt="White ribbon — standing against violence"
                   className="h-full w-full object-cover"
                   loading="lazy"
                 />
-              </div>
+              </figure>
             </FadeIn>
-            <FadeIn delay={0.15}>
+            <FadeIn delay={0.12}>
               <div>
-                <span className="text-xs font-semibold uppercase tracking-widest text-primary">You Belong Here</span>
-                <h2 className="mt-3 font-serif text-2xl font-semibold text-foreground md:text-3xl leading-snug">
-                  Your story matters. Your safety matters.
+                <h2 className="font-serif text-2xl font-semibold leading-snug text-foreground md:text-3xl">
+                  Your story matters
                 </h2>
-                <p className="mt-5 text-muted-foreground leading-relaxed">
-                  Every person who reaches out to COVER is met with compassion, confidentiality, and respect.
-                  We understand how hard it can be to ask for help — and we want you to know that
-                  taking this step is an act of incredible strength.
+                <p className="mt-5 leading-relaxed text-muted-foreground">
+                  Everyone who reaches out is met with compassion, confidentiality, and respect. We know how hard it can
+                  be to ask for help — and reaching out is already a brave step.
                 </p>
-                <div className="mt-6 rounded-xl bg-soft-rose p-5">
-                  <p className="text-sm text-foreground leading-relaxed">
-                    {
-                      "\u201cYou don't have to have it all figured out. You just have to take the first step. We'll walk with you from there.\u201d"
-                    }
-                  </p>
-                </div>
+                <blockquote className="mt-6 border-l-2 border-primary/40 pl-5 text-sm leading-relaxed text-foreground">
+                  You do not have to have it all figured out. You only have to take the first step — we can walk with
+                  you from there.
+                </blockquote>
               </div>
             </FadeIn>
           </div>
         </div>
       </section>
 
-      {/* Province Resources */}
       <ProvinceResources />
 
-      {/* Donation */}
       <DonationSection />
 
-      {/* CTA */}
-      <section className="py-16 md:py-24">
+      <section className="border-t border-border py-16 md:py-24">
         <div className="container mx-auto max-w-3xl px-4 text-center sm:px-6">
           <FadeIn>
-            <h2 className="font-serif text-2xl font-semibold text-foreground md:text-3xl">
-              When you're ready, we're here.
-            </h2>
+            <h2 className="font-serif text-2xl font-semibold text-foreground md:text-3xl">When you are ready</h2>
             <p className="mt-4 text-muted-foreground leading-relaxed">
-              There's no pressure and no timeline. Whether you need someone to talk to,
-              help with tuition, or connection to resources — reach out whenever it feels right.
+              There is no timeline that fits everyone. Whether you need someone to listen, help with school costs, or a
+              connection to services, you can reach out whenever it feels right.
             </p>
-            <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-              <Button asChild size="lg" className="w-full rounded-full px-8 sm:w-auto">
-                <Link to="/contact">Contact Us</Link>
+            <div className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:justify-center">
+              <Button asChild size="lg" className="w-full rounded-md px-8 sm:w-auto">
+                <Link to="/contact">Contact us</Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="w-full rounded-full px-8 sm:w-auto">
-                <a href="https://gofund.me/79a4084e5" target="_blank" rel="noopener noreferrer">
-                  <Heart className="mr-1 h-4 w-4" />
-                  Support Our Mission
+              <Button variant="outline" size="lg" className="w-full rounded-md border-border px-8 sm:w-auto" asChild>
+                <a href={GOFUNDME_CAMPAIGN_URL} target="_blank" rel="noopener noreferrer">
+                  <Heart className="mr-2 h-4 w-4" aria-hidden />
+                  GoFundMe campaign
                 </a>
               </Button>
             </div>

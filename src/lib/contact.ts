@@ -48,14 +48,20 @@ export async function submitContactForm(payload: ContactFormPayload): Promise<{ 
     return { ok: false, error: "Network error. Check your connection or email us directly." };
   }
 
-  let data: { success?: boolean; message?: string } = {};
+  let data: { success?: boolean | string; message?: string } = {};
   try {
     data = (await res.json()) as typeof data;
   } catch {
     /* FormSubmit may not always return JSON on hard errors */
   }
 
-  if (res.ok && data.success !== false) {
+  // FormSubmit often returns string booleans in JSON (`"true"` / `"false"`); only real success counts.
+  const rejected =
+    data.success === false ||
+    data.success === "false" ||
+    String(data.success).toLowerCase() === "false";
+
+  if (res.ok && !rejected) {
     return { ok: true };
   }
 

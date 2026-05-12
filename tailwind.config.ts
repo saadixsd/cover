@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Martel Sans", "sans-serif"],
-        serif: ["Playfair Display", "serif"],
+        sans: ['"DM Sans"', "system-ui", "sans-serif"],
+        serif: ['"Fraunces"', "Georgia", "serif"],
       },
       colors: {
         border: "hsl(var(--border))",

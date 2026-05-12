@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ExternalLink } from "lucide-react";
 import { CONTACT_EMAIL } from "@/lib/contact";
+import { MAIN_NAV_LINKS } from "@/lib/nav";
 
 const Footer = () => {
   return (
@@ -28,15 +29,9 @@ const Footer = () => {
           <div>
             <h4 className="text-sm font-semibold text-foreground">Navigate</h4>
             <ul className="mt-2 space-y-1.5">
-              {[
-                { to: "/", label: "Home" },
-                { to: "/about", label: "About" },
-                { to: "/faq", label: "FAQ" },
-                { to: "/resources", label: "Resources" },
-                { to: "/contact", label: "Contact" },
-              ].map((l) => (
+              {MAIN_NAV_LINKS.map((l) => (
                 <li key={l.to}>
-                  <Link to={l.to} className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  <Link to={l.to} className="text-sm text-muted-foreground transition-colors hover:text-primary">
                     {l.label}
                   </Link>
                 </li>
