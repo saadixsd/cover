@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout";
 import FadeIn from "@/components/FadeIn";
+import PageHero from "@/components/PageHero";
 import { CONTACT_EMAIL } from "@/lib/contact";
 import {
   Accordion,
@@ -41,21 +42,22 @@ const faqs = [
 
 const FAQ = () => (
   <Layout>
-    <section className="py-20">
+    <PageHero
+      eyebrow="FAQ"
+      title="Questions,"
+      highlight="answered."
+      description="We want you to feel comfortable and informed. Here are answers to some common questions."
+    />
+    <section className="py-16 md:py-20">
       <div className="container mx-auto max-w-3xl px-6">
-        <FadeIn>
-          <h1 className="font-serif text-3xl font-semibold text-foreground md:text-4xl">
-            Frequently Asked Questions
-          </h1>
-          <p className="mt-4 text-muted-foreground">
-            We want you to feel comfortable and informed. Here are answers to some common questions.
-          </p>
-        </FadeIn>
-
         <FadeIn delay={0.1}>
-          <Accordion type="single" collapsible className="mt-10">
+          <Accordion type="single" collapsible className="space-y-3">
             {faqs.map((faq, i) => (
-              <AccordionItem key={i} value={`faq-${i}`}>
+              <AccordionItem
+                key={i}
+                value={`faq-${i}`}
+                className="overflow-hidden rounded-xl border border-border bg-background px-5 shadow-sm transition-all hover:shadow-md data-[state=open]:shadow-elegant"
+              >
                 <AccordionTrigger className="text-left font-sans text-base font-medium text-foreground hover:no-underline">
                   {faq.q}
                 </AccordionTrigger>
