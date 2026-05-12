@@ -7,7 +7,7 @@
 @layer base {
   :root {
     --background: 30 50% 97%;
-    --foreground: 15 20% 20%;
+    --foreground: 15 30% 14%;
 
     --card: 30 40% 95%;
     --card-foreground: 15 20% 20%;
@@ -15,14 +15,14 @@
     --popover: 30 50% 97%;
     --popover-foreground: 15 20% 20%;
 
-    --primary: 5 45% 45%;
+    --primary: 5 65% 42%;
     --primary-foreground: 30 50% 97%;
 
     --secondary: 20 40% 90%;
     --secondary-foreground: 15 20% 25%;
 
     --muted: 25 30% 92%;
-    --muted-foreground: 15 10% 45%;
+    --muted-foreground: 15 18% 32%;
 
     --accent: 15 50% 88%;
     --accent-foreground: 15 20% 20%;
@@ -36,10 +36,16 @@
 
     --radius: 0.75rem;
 
-    --peach: 18 60% 85%;
-    --cream: 35 50% 95%;
-    --warm-red: 5 50% 55%;
-    --soft-rose: 10 40% 92%;
+    --peach: 18 75% 78%;
+    --cream: 35 55% 94%;
+    --warm-red: 5 65% 50%;
+    --soft-rose: 10 55% 88%;
+    --deep-plum: 350 35% 22%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(10 60% 88%) 0%, hsl(20 70% 82%) 45%, hsl(5 50% 70%) 100%);
+    --gradient-warm: linear-gradient(120deg, hsl(5 65% 42%), hsl(20 75% 55%));
+    --shadow-elegant: 0 25px 60px -20px hsl(5 65% 42% / 0.35);
+    --shadow-glow: 0 0 80px hsl(20 80% 70% / 0.5);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -99,4 +105,48 @@
   h1, h2, h3 {
     font-family: 'Playfair Display', serif;
   }
+}
+
+@layer utilities {
+  .bg-gradient-hero { background-image: var(--gradient-hero); }
+  .bg-gradient-warm { background-image: var(--gradient-warm); }
+  .shadow-elegant { box-shadow: var(--shadow-elegant); }
+  .shadow-glow { box-shadow: var(--shadow-glow); }
+
+  .text-gradient {
+    background: var(--gradient-warm);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .animate-blob { animation: blob 18s ease-in-out infinite; }
+  .animate-blob-slow { animation: blob 26s ease-in-out infinite; }
+  .animate-float { animation: float 6s ease-in-out infinite; }
+  .animate-shimmer {
+    background-size: 200% 200%;
+    animation: shimmer 8s ease infinite;
+  }
+  .animate-marquee { animation: marquee 40s linear infinite; }
+}
+
+@keyframes blob {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(40px, -30px) scale(1.1); }
+  66% { transform: translate(-30px, 30px) scale(0.95); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes shimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
