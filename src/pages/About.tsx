@@ -45,9 +45,7 @@ const About = () => (
               </p>
               <p className="mt-4 text-muted-foreground leading-relaxed">
                 Today, COVER focuses on awareness, connection to trusted resources, and walking
-                alongside survivors with compassion and confidentiality. As our community grows and
-                we secure more funding, we plan to expand into direct tuition and educational
-                support — but we are not offering financial assistance at this time.
+                alongside survivors with compassion and confidentiality.
               </p>
               <p className="mt-4 text-muted-foreground leading-relaxed">
                 We are based in Montreal and currently focused on supporting our local community,
