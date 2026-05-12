@@ -52,28 +52,32 @@ const Index = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-soft-rose py-14 sm:py-20 md:py-32 lg:py-40">
-        <div className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-peach/40 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-20 -left-20 h-60 w-60 rounded-full bg-accent/30 blur-3xl" />
+      <section className="relative overflow-hidden bg-gradient-hero animate-shimmer py-14 sm:py-20 md:py-32 lg:py-40">
+        <div className="pointer-events-none absolute -top-32 -right-32 h-96 w-96 rounded-full bg-primary/30 blur-3xl animate-blob" />
+        <div className="pointer-events-none absolute -bottom-24 -left-24 h-80 w-80 rounded-full bg-warm-red/40 blur-3xl animate-blob-slow" />
+        <div className="pointer-events-none absolute top-1/3 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-peach/50 blur-3xl animate-float" />
 
-        <div className="container relative mx-auto max-w-4xl px-4 text-center sm:px-6">
+        <div className="container relative z-10 mx-auto max-w-4xl px-4 text-center sm:px-6">
           <FadeIn>
-            <h1 className="font-serif text-3xl font-semibold leading-tight text-foreground sm:text-4xl md:text-5xl lg:text-6xl">
-              You deserve to feel safe.
+            <span className="inline-block rounded-full bg-background/70 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-primary backdrop-blur-sm shadow-sm">
+              A safe space for survivors
+            </span>
+            <h1 className="mt-6 font-serif text-4xl font-bold leading-[1.05] text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
+              You deserve to <span className="text-gradient italic">feel safe.</span>
             </h1>
           </FadeIn>
           <FadeIn delay={0.15}>
-            <p className="mx-auto mt-4 max-w-2xl text-sm text-muted-foreground sm:mt-6 sm:text-base md:text-lg leading-relaxed">
+            <p className="mx-auto mt-6 max-w-2xl text-base text-foreground/80 sm:text-lg md:text-xl leading-relaxed">
               COVER is more than a helpline — we're a Canadian nonprofit that supports survivors of
               domestic abuse and assault with education funding, resource connection, and ongoing care.
             </p>
           </FadeIn>
           <FadeIn delay={0.3}>
             <div className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:gap-4">
-              <Button asChild size="lg" className="w-full rounded-full px-8 sm:w-auto">
+              <Button asChild size="lg" className="w-full rounded-full px-8 shadow-elegant transition-transform hover:scale-105 sm:w-auto">
                 <Link to="/contact">Get Support</Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="w-full rounded-full px-8 sm:w-auto">
+              <Button asChild variant="outline" size="lg" className="w-full rounded-full border-foreground/20 bg-background/60 px-8 backdrop-blur-sm transition-transform hover:scale-105 sm:w-auto">
                 <Link to="/about">
                   Learn About Us
                   <ArrowRight className="ml-1 h-4 w-4" />
@@ -82,6 +86,7 @@ const Index = () => {
             </div>
           </FadeIn>
         </div>
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-warm opacity-60" />
       </section>
 
       {/* Welcome / Who We Are */}
@@ -142,10 +147,11 @@ const Index = () => {
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {helpCards.map((card, i) => (
               <FadeIn key={card.title} delay={i * 0.08}>
-                <Card className="group h-full border-none bg-background shadow-sm transition-all hover:shadow-md hover:-translate-y-1">
+                <Card className="group relative h-full overflow-hidden border-none bg-background shadow-sm transition-all duration-300 hover:shadow-elegant hover:-translate-y-2">
+                  <div className="absolute inset-x-0 top-0 h-1 bg-gradient-warm opacity-0 transition-opacity group-hover:opacity-100" />
                   <CardContent className="p-6 sm:p-8">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent transition-colors group-hover:bg-primary/10">
-                      <card.icon className="h-5 w-5 text-primary" />
+                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-warm text-primary-foreground shadow-md transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
+                      <card.icon className="h-6 w-6" />
                     </div>
                     <h3 className="mt-5 font-serif text-lg font-semibold text-foreground">{card.title}</h3>
                     <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{card.description}</p>
