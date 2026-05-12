@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import { Search, MapPin, Phone, Mail, ExternalLink, X, AlertCircle } from "lucide-react";
 import Layout from "@/components/Layout";
 import FadeIn from "@/components/FadeIn";
+import PageHero from "@/components/PageHero";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -64,21 +65,17 @@ const Resources = () => {
 
   return (
     <Layout>
-      <section className="bg-cream py-16 md:py-20">
+      <PageHero
+        eyebrow="Directory"
+        title="Find"
+        highlight="support."
+        description="A directory of Quebec-based organizations offering shelter, support, legal help, and safe spaces. Search or filter to find what fits your situation."
+      />
+      <section className="bg-cream py-12 md:py-16">
         <div className="container mx-auto max-w-5xl px-6">
-          <FadeIn>
-            <div className="text-center">
-              <h1 className="font-serif text-3xl font-semibold text-foreground md:text-4xl">
-                Find Support
-              </h1>
-              <p className="mx-auto mt-3 max-w-xl text-muted-foreground">
-                A directory of Quebec-based organizations offering shelter, support, legal help, and safe spaces. Search or filter to find what fits your situation.
-              </p>
-            </div>
-          </FadeIn>
 
           <FadeIn delay={0.1}>
-            <div className="mx-auto mt-6 flex items-start gap-3 rounded-xl border border-border bg-background/60 p-4 text-sm text-muted-foreground md:max-w-2xl">
+            <div className="mx-auto flex items-start gap-3 rounded-xl border border-border bg-background/60 p-4 text-sm text-muted-foreground md:max-w-2xl">
               <AlertCircle className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
               <p>
                 If you are in immediate danger, call <strong className="text-foreground">911</strong>. This directory is informational and is not a crisis hotline.
@@ -177,7 +174,8 @@ const Resources = () => {
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
               {filtered.map((o, i) => (
                 <FadeIn key={o.name} delay={Math.min(i * 0.02, 0.2)}>
-                  <Card className="h-full border-none bg-background shadow-sm transition-shadow hover:shadow-md">
+                  <Card className="group relative h-full overflow-hidden border-none bg-background shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-elegant">
+                    <div className="absolute inset-x-0 top-0 h-1 bg-gradient-warm opacity-0 transition-opacity group-hover:opacity-100" />
                     <CardContent className="flex h-full flex-col gap-3 p-6">
                       <div>
                         <h3 className="font-serif text-lg font-semibold leading-snug text-foreground">
