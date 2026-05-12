@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["DM Sans", "sans-serif"],
+        sans: ["Martel Sans", "sans-serif"],
         serif: ["Playfair Display", "serif"],
       },
       colors: {

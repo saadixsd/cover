@@ -26,7 +26,7 @@ const ProvinceResources = () => {
               Find Support Near You
             </h2>
             <p className="mx-auto mt-3 max-w-lg text-muted-foreground">
-              Select your province or territory to see local resources, helplines, and government support available in your area.
+              Select your Montreal area, borough, or neighbouring city to see local resources, helplines, and support nearby.
             </p>
           </div>
         </FadeIn>
@@ -35,7 +35,7 @@ const ProvinceResources = () => {
           <div className="mx-auto mt-8 max-w-sm">
             <Select onValueChange={handleSelect}>
               <SelectTrigger className="rounded-xl border-border bg-background text-base">
-                <SelectValue placeholder="Choose your province / territory" />
+                <SelectValue placeholder="Choose your area or borough" />
               </SelectTrigger>
               <SelectContent>
                 {provinces.map((p) => (
