@@ -51,7 +51,7 @@ const FAQ = () => (
     <section className="py-16 md:py-20">
       <div className="container mx-auto max-w-3xl px-6">
         <FadeIn delay={0.1}>
-          <Accordion type="single" collapsible className="space-y-3">
+          <Accordion type="single" collapsible className="mt-6 space-y-3">
             {faqs.map((faq, i) => (
               <AccordionItem
                 key={i}
