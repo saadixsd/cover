@@ -3,27 +3,18 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import FadeIn from "@/components/FadeIn";
+import PageHero from "@/components/PageHero";
 import hopePeace from "@/assets/hope-peace.jpg";
 import coverLogo from "@/assets/cover-logo.jpg";
 
 const About = () => (
   <Layout>
-    {/* Hero banner */}
-    <section className="relative overflow-hidden bg-soft-rose py-16 md:py-24">
-      <div className="pointer-events-none absolute -top-20 -right-20 h-56 w-56 rounded-full bg-peach/30 blur-3xl" />
-      <div className="container relative mx-auto max-w-3xl px-6 text-center">
-        <FadeIn>
-          <span className="text-xs font-semibold uppercase tracking-widest text-primary">About Us</span>
-          <h1 className="mt-3 font-serif text-3xl font-semibold text-foreground md:text-4xl lg:text-5xl">
-            We are COVER
-          </h1>
-          <p className="mx-auto mt-5 max-w-xl text-muted-foreground leading-relaxed">
-            A Montreal-based Canadian nonprofit standing with survivors of domestic abuse, assault,
-            and unsafe situations — providing real support that goes far beyond a phone call.
-          </p>
-        </FadeIn>
-      </div>
-    </section>
+    <PageHero
+      eyebrow="About Us"
+      title="We are"
+      highlight="COVER"
+      description="A Montreal-based Canadian nonprofit standing with survivors of domestic abuse, assault, and unsafe situations — providing real support that goes far beyond a phone call."
+    />
 
     {/* Mission */}
     <section className="py-16 md:py-24">
@@ -85,10 +76,11 @@ const About = () => (
             },
           ].map((item, i) => (
             <FadeIn key={item.title} delay={i * 0.08}>
-              <div className="rounded-xl bg-background p-6 shadow-sm">
-                <h3 className="font-serif text-lg font-semibold text-foreground">{item.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.text}</p>
-              </div>
+            <div className="group relative h-full overflow-hidden rounded-xl bg-background p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-elegant">
+              <div className="absolute inset-x-0 top-0 h-1 bg-gradient-warm opacity-0 transition-opacity group-hover:opacity-100" />
+              <h3 className="font-serif text-lg font-semibold text-foreground">{item.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.text}</p>
+            </div>
             </FadeIn>
           ))}
         </div>
